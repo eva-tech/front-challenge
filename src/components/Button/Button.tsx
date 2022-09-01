@@ -14,6 +14,10 @@ interface ButtonProps {
    */
   size?: "small" | "medium" | "large";
   /**
+   * Specify an optional className to be added to the component.
+   */
+   className?: string;
+  /**
    * Button contents
    */
   label: string;
@@ -30,6 +34,7 @@ export const Button = ({
   primary = true,
   size = "medium",
   backgroundColor,
+  className,
   label,
   ...props
 }: ButtonProps) => {
@@ -39,7 +44,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={["eva-button", `eva-button--${size}`, mode].join(
+      className={[className, "eva-button", `eva-button--${size}`, mode].join(
         " "
       )}
       style={{ backgroundColor }}
