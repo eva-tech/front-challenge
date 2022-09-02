@@ -1,15 +1,17 @@
-import { Button } from './components/Button/Button';
-import { Icon, IconCatalog } from './components/Icon/Icon';
+import { Button, ButtonVariant, ButtonSize } from "./components/Button/Button";
+import { Icon, IconCatalog } from "./components/Icon/Icon";
 
-import './App.css';
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <Button label="CTA" />
-      <Icon icon={IconCatalog.turn} />
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<div className="App">
+			<Button variant={ButtonVariant.primary} size={ButtonSize.lg}>
+				CTA
+			</Button>
+			<Icon icon={IconCatalog.upload} width="32px" height="32px" />
+		</div>
+	);
+};
 
 export default App;
