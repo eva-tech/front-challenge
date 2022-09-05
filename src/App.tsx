@@ -1,16 +1,22 @@
-import { Button, ButtonVariant, ButtonSize } from "./components/Button/Button";
-import { Icon, IconCatalog } from "./components/Icon/Icon";
-
+import React from 'react';
 import "./App.css";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Patients from "./pages/Patients";
 
 const App = () => {
 	return (
-		<div className="App">
-			<Button variant={ButtonVariant.primary} size={ButtonSize.lg}>
-				CTA
-			</Button>
-			<Icon icon={IconCatalog.upload} width="32px" height="32px" />
-		</div>
+    <div className="App">
+      <React.Suspense fallback={null}>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="patients" element={<Patients />} />
+          </Routes>
+        </BrowserRouter>
+      </React.Suspense>
+    </div>
 	);
 };
 
